@@ -21,8 +21,9 @@ if not ACCOUNT_ID or not API_TOKEN:
     sys.exit(1)
 
 AD_BLOCK_LISTS: List[str] = [
-    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
-    "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light-onlydomains.txt",
+    "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
+    "https://small.oisd.nl/domainswild2"
 ]
 
 LIST_PREFIX: str = "Auto_AdBlock_Part_"
