@@ -21,6 +21,7 @@ if not ACCOUNT_ID or not API_TOKEN:
     sys.exit(1)
 
 AD_BLOCK_LISTS: List[str] = [
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light-onlydomains.txt",
     "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
     "https://small.oisd.nl/domainswild2"
@@ -46,12 +47,9 @@ domain_pattern = re.compile(
 )
 
 replace_pattern = re.compile(
-    r"^(0\.0\.0\.0|127\.0\.0\.1|::1)\s+|"    
-
-    r"^(\|\||@@\|\||\*\.|\*|https?://)|"     
-
-    r"[\^\/#].*$"                           
-
+    r"^(0\.0\.0\.0|127\.0\.0\.1|::1)\s+|"
+    r"^(\|\||@@\|\||\*\.|\*|https?://)|"
+    r"[\^\/#].*$"
 )
 
 def clean_domain(raw: str) -> Optional[str]:
