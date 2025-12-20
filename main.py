@@ -30,7 +30,7 @@ AD_BLOCK_LISTS: List[str] = [
 LIST_PREFIX: str = "Auto_AdBlock_Part_"
 POLICY_NAME: str = "Ad Block Policy (Auto-Generated)"
 CHUNK_SIZE: int = 1000 
-CLEANUP_MODE: bool = False 
+CLEANUP_MODE: bool = True
 
 try:
     cf = Cloudflare(api_token=API_TOKEN)
